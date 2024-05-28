@@ -17,18 +17,25 @@ O desafio consiste em efetuar um processamento de dados utilizando o produto Dat
 ### Etapas do Desafio
 
 1. Criar um bucket no Cloud Storage
-1. Atualizar o arquivo ```contador.py``` com o nome do Bucket criado nas linhas que contém ```{SEU_BUCKET}```.
-1. Fazer o upload dos arquivos ```contador.py``` e ```livro.txt``` para o bucket criado (instruções abaixo)
+2. Atualizar o arquivo ```contador.py``` com o nome do Bucket criado nas linhas que contém ```{SEU_BUCKET}```.
+3. Fazer o upload dos arquivos ```contador.py``` e ```livro.txt``` para o bucket criado (instruções abaixo)
     - https://cloud.google.com/storage/docs/uploading-objects
 
-1. Utilizar o código em um cluster Dataproc, executando um Job do tipo PySpark chamando ```gs://{SEU_BUCKET}/contador.py```
-1. O Job irá gerar uma pasta no bucket chamada ```resultado```. Dentro dessa pasta o arquivo ```part-00000``` irá conter a lista de palavras e quantas vezes ela é repetida em todo o livro.
+4. Utilizar o código em um cluster Dataproc, executando um Job do tipo PySpark chamando ```gs://{SEU_BUCKET}/contador.py```
+5. O Job irá gerar uma pasta no bucket chamada ```resultado```. Dentro dessa pasta o arquivo ```resultado.csv``` irá conter a lista de palavras e quantas vezes ela é repetida em todo o livro.
+6. Se utilizando do arquivo ```resultado.csv``` vamos mostrar esses dados em um formato de graficos utilizando o Looker Studio (anteriormente Google Data Studio)
+7. Acesse o Looker Studio (Google Data Studio).
+8. Crie um novo relatório ou abra um relatório existente.
+9. Clique em "Adicionar dados" e selecione o conector do Google Cloud Storage.
+10. Autentique-se e selecione o arquivo ```resultado.csv``` dentro do bucket.
+11. Configure o esquema de dados para garantir que as colunas "Word" e "Count" sejam reconhecidas corretamente.
+12. Adicione visualizações ao relatório para analisar a contagem de palavras, como gráficos de barras, tabelas e outros componentes visuais.
 
 ### Entrega do Resultado
 
-1. Criar um repositório no GitHub.
-2. Criar um arquivo chamado ```resultado.txt```. Dentro desse arquivo, colocar as 10 palavras que mais são usadas no livro, de acordo com o resultado do Job.
-3. Inserir os arquivo ```resultado.txt``` e ```part-00000``` no repositório e informar na plataforma da Digital Innovation One.
+No lookerstudio gerar um link de compartilhamento publico para que as pessoas possam ver como esse link: https://lookerstudio.google.com/s/kgCc1pM1P1k
+
+![alt text](Grafico.png)
 
 ---
 
